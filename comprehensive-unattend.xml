@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+  <!-- Windows Image Configuration -->
+  <settings pass="windowsPE">
+    <component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <SetupUILanguage>
+        <UILanguage>en-US</UILanguage>
+      </SetupUILanguage>
+      <UserLocale>en-US</UserLocale>
+    </component>
+    <component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <UserData>
+        <AcceptEula>true</AcceptEula>
+        <FullName>Administrator</FullName>
+        <Organization>Organization</Organization>
+      </UserData>
+      <EnableFirewall>false</EnableFirewall>
+    </component>
+  </settings>
+
+  <!-- Specialize Configuration -->
+  <settings pass="specialize">
+    <!-- Network Configuration -->
+    <component name="Microsoft-Windows-TCPIP" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Interfaces>
+        <Interface wcm:action="add">
+          <Ipv4Settings>
+            <DhcpEnabled>true</DhcpEnabled>
+          </Ipv4Settings>
+          <Identifier>Local Area Connection</Identifier>
+        </Interface>
+      </Interfaces>
+    </component>
+
+    <!-- Remote Desktop Configuration -->
+    <component name="Microsoft-Windows-TerminalServices-LocalSessionManager" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <fDenyTSConnections>false</fDenyTSConnections>
+    </component>
+    <component name="Microsoft-Windows-TerminalServices-RDP-WinStationExtensions" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <UserAuthentication>0</UserAuthentication>
+    </component>
+
+    <!-- Windows Firewall Configuration -->
+    <component name="Microsoft-Windows-Firewall" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Profile>
+        <WindowsFirewall>false</WindowsFirewall>
+      </Profile>
+    </component>
+
+    <!-- Shell Setup with Admin Account -->
+    <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <UserAccounts>
+        <AdministratorPassword>
+          <Value>Admin123!</Value>
+          <PlainText>true</PlainText>
+        </AdministratorPassword>
+        <LocalAccounts>
+          <LocalAccount wcm:action="add">
+            <Password>
+              <Value>Admin123!</Value>
+              <PlainText>true</PlainText>
+            </Password>
+            <Description>Local Administrator Account</Description>
+            <DisplayName>Administrator</DisplayName>
+            <Group>Administrators</Group>
+            <Name>Administrator</Name>
+          </LocalAccount>
+        </LocalAccounts>
+      </UserAccounts>
+      <AutoLogon>
+        <Username>Administrator</Username>
+        <Password>
+          <Value>Admin123!</Value>
+          <PlainText>true</PlainText>
+        </Password>
+        <Enabled>true</Enabled>
+        <LogonCount>1</LogonCount>
+      </AutoLogon>
+      <TimeZone>Central Standard Time</TimeZone>
+      <ComputerName>WIN-SYSPREP</ComputerName>
+    </component>
+
+    <!-- Windows Security Center -->
+    <component name="Microsoft-Windows-Security-SPP-UX" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <SkipAutoActivation>true</SkipAutoActivation>
+    </component>
+
+    <!-- Windows Update Configuration -->
+    <component name="Microsoft-Windows-WindowsUpdate" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <DisableWindowsUpdateAccess>false</DisableWindowsUpdateAccess>
+    </component>
+  </settings>
+
+  <!-- OOBE System Configuration -->
+  <settings pass="oobeSystem">
+    <!-- International Settings -->
+    <component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <InputLocale>en-US</InputLocale>
+      <SystemLocale>en-US</SystemLocale>
+      <UILanguage>en-US</UILanguage>
+      <UserLocale>en-US</UserLocale>
+    </component>
+
+    <!-- Shell Setup for OOBE -->
+    <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <OOBE>
+        <HideEULAPage>true</HideEULAPage>
+        <NetworkLocation>Work</NetworkLocation>
+        <ProtectYourPC>3</ProtectYourPC>
+        <SkipUserOOBE>true</SkipUserOOBE>
+        <SkipMachineOOBE>true</SkipMachineOOBE>
+        <HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+      </OOBE>
+      <UserAccounts>
+        <AdministratorPassword>
+          <Value>Admin123!</Value>
+          <PlainText>true</PlainText>
+        </AdministratorPassword>
+      </UserAccounts>
+      <TimeZone>Central Standard Time</TimeZone>
+    </component>
+
+    <!-- Windows Error Reporting -->
+    <component name="Microsoft-Windows-ErrorReportingCore" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <DisableErrorReporting>true</DisableErrorReporting>
+    </component>
+
+    <!-- Windows Customer Experience Improvement Program -->
+    <component name="Microsoft-Windows-SQM-Client" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <CEIPEnable>0</CEIPEnable>
+    </component>
+  </settings>
+
+  <!-- First Logon Commands -->
+  <settings pass="firstLogonCommands">
+    <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <FirstLogonCommands>
+        <!-- Enable RDP -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f</CommandLine>
+          <Description>Enable Remote Desktop</Description>
+          <Order>1</Order>
+        </SynchronousCommand>
+        
+        <!-- Configure RDP Security -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 0 /f</CommandLine>
+          <Description>Configure RDP Security</Description>
+          <Order>2</Order>
+        </SynchronousCommand>
+        
+        <!-- Enable Network Level Authentication -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v SecurityLayer /t REG_DWORD /d 2 /f</CommandLine>
+          <Description>Enable Network Level Authentication</Description>
+          <Order>3</Order>
+        </SynchronousCommand>
+        
+        <!-- Configure Windows Firewall for RDP -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>netsh advfirewall firewall set rule group="remote desktop" new enable=Yes</CommandLine>
+          <Description>Enable RDP in Windows Firewall</Description>
+          <Order>4</Order>
+        </SynchronousCommand>
+        
+        <!-- Enable SSM (System Service Manager) -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>sc config "RemoteRegistry" start= auto</CommandLine>
+          <Description>Enable Remote Registry Service</Description>
+          <Order>5</Order>
+        </SynchronousCommand>
+        
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>sc start "RemoteRegistry"</CommandLine>
+          <Description>Start Remote Registry Service</Description>
+          <Order>6</Order>
+        </SynchronousCommand>
+        
+        <!-- Enable WinRM for SSM -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>winrm quickconfig -q</CommandLine>
+          <Description>Configure WinRM</Description>
+          <Order>7</Order>
+        </SynchronousCommand>
+        
+        <!-- Enable PowerShell Remoting -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>Enable-PSRemoting -Force -SkipNetworkProfileCheck</CommandLine>
+          <Description>Enable PowerShell Remoting</Description>
+          <Order>8</Order>
+        </SynchronousCommand>
+        
+        <!-- Set Computer Name -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>powershell -Command "Rename-Computer -NewName 'WIN-SYSPREP' -Force"</CommandLine>
+          <Description>Set Computer Name</Description>
+          <Order>9</Order>
+        </SynchronousCommand>
+        
+        <!-- Disable UAC for easier administration -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f</CommandLine>
+          <Description>Disable UAC</Description>
+          <Order>10</Order>
+        </SynchronousCommand>
+        
+        <!-- Enable Administrator Account -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>net user Administrator /active:yes</CommandLine>
+          <Description>Enable Administrator Account</Description>
+          <Order>11</Order>
+        </SynchronousCommand>
+        
+        <!-- Set Administrator Password -->
+        <SynchronousCommand wcm:action="add">
+          <CommandLine>net user Administrator Admin123!</CommandLine>
+          <Description>Set Administrator Password</Description>
+          <Order>12</Order>
+        </SynchronousCommand>
+      </FirstLogonCommands>
+    </component>
+  </settings>
+</unattend>
