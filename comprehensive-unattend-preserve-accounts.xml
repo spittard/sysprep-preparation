@@ -52,7 +52,7 @@
       <UserAccounts>
         <!-- Only set Administrator password - preserve all existing local accounts -->
         <AdministratorPassword>
-          <Value>Admin123!</Value>
+          <Value>Password123!</Value>
           <PlainText>true</PlainText>
         </AdministratorPassword>
         <!-- REMOVED LocalAccounts section to preserve existing accounts -->
@@ -60,7 +60,7 @@
       <AutoLogon>
         <Username>Administrator</Username>
         <Password>
-          <Value>Admin123!</Value>
+          <Value>Password123!</Value>
           <PlainText>true</PlainText>
         </Password>
         <Enabled>true</Enabled>
@@ -104,7 +104,7 @@
       <UserAccounts>
         <!-- Only set Administrator password - preserve existing accounts -->
         <AdministratorPassword>
-          <Value>Admin123!</Value>
+          <Value>Password123!</Value>
           <PlainText>true</PlainText>
         </AdministratorPassword>
       </UserAccounts>
@@ -204,7 +204,7 @@
         
         <!-- Set Administrator Password (preserve existing accounts) -->
         <SynchronousCommand wcm:action="add">
-          <CommandLine>net user Administrator Admin123!</CommandLine>
+          <CommandLine>net user Administrator Password123!</CommandLine>
           <Description>Set Administrator Password</Description>
           <Order>12</Order>
         </SynchronousCommand>

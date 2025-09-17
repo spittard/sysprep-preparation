@@ -105,7 +105,7 @@
       <UserAccounts>
         <!-- Administrator Password - PLAIN TEXT for Cloud Console Compatibility -->
         <AdministratorPassword>
-          <Value>CloudConsolePassword123!</Value>
+          <Value>Password123!</Value>
           <PlainText>true</PlainText>
         </AdministratorPassword>
       </UserAccounts>
@@ -205,7 +205,7 @@
         
         <!-- Set Administrator Password - CLOUD CONSOLE COMPATIBLE -->
         <SynchronousCommand wcm:action="add">
-          <CommandLine>net user Administrator "CloudConsolePassword123!"</CommandLine>
+          <CommandLine>net user Administrator "Password123!"</CommandLine>
           <Description>Set Administrator Password for Cloud Console</Description>
           <Order>12</Order>
         </SynchronousCommand>

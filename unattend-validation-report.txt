@@ -1,7 +1,7 @@
 ﻿UNATTEND.XML VALIDATION REPORT
 ===============================
-Generated: 09/17/2025 10:29:22
-File: cloud-compatible-unattend-preserve-accounts.xml
+Generated: 09/17/2025 11:02:49
+File: comprehensive-unattend-preserve-accounts.xml
 
 VALIDATION SUMMARY
 ==================
@@ -14,53 +14,53 @@ WARNINGS
 ========
 Component: Firewall | Line: 0
 Message: Windows Firewall is disabled
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:49
 
 Component: Shell-Setup | Line: 0
 Message: Administrator password is set in plain text
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:49
 
 Component: Shell-Setup | Line: 0
 Message: Administrator password is set in plain text
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:49
 
 Component: Shell-Setup | Line: 0
 Message: No AdministratorPassword configured
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:49
 
 
 INFORMATION
 ===========
 Component:  | Line: 0
 Message: XML syntax validation passed
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:48
 
 Component:  | Line: 0
 Message: Found required pass: windowsPE
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:49
 
 Component:  | Line: 0
 Message: Found required pass: specialize
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:49
 
 Component:  | Line: 0
 Message: Found required pass: oobeSystem
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:49
 
 Component: RDP | Line: 0
 Message: Remote Desktop is enabled
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:49
 
 Component: FirstLogonCommands | Line: 0
-Message: Found 14 first logon commands
-Timestamp: 09/17/2025 10:29:22
+Message: Found 12 first logon commands
+Timestamp: 09/17/2025 11:02:49
 
 Component: FirstLogonCommands | Line: 0
 Message: RDP enabling commands found
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:49
 
 Component: FirstLogonCommands | Line: 0
 Message: SSM/WinRM configuration commands found
-Timestamp: 09/17/2025 10:29:22
+Timestamp: 09/17/2025 11:02:49
 
 
